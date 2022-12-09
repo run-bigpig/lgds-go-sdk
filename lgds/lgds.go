@@ -116,7 +116,7 @@ func (l *LGDS) Close() error {
 	return l.consumer.Close()
 }
 
-func (l *LGDS) add(DeviceId string, UserId string, AppName string, Platform string, Sever int, EventName, DataType string, Action string, properties map[string]interface{}) error {
+func (l *LGDS) add(DeviceId string, UserId string, AppName string, Platform string, Server int, EventName, DataType string, Action string, properties map[string]interface{}) error {
 	if len(DeviceId) == 0 && len(UserId) == 0 {
 		return errors.New("invalid paramters: device_id and user_id cannot be empty at the same time")
 	}
@@ -125,10 +125,10 @@ func (l *LGDS) add(DeviceId string, UserId string, AppName string, Platform stri
 		UserId:     DeviceId,
 		AppName:    AppName,
 		Platform:   Platform,
-		Time:       time.Now().UTC().Format(DATE_FORMAT),
+		Time:       time.Now().UTC().Format(DateFormat),
 		EventName:  EventName,
 		Type:       DataType,
-		Server:     Sever,
+		Server:     Server,
 		Action:     Action,
 		Properties: properties,
 	}
