@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	serverUrl := "https://datalog-v2.66yytx.com/logagent"
+	serverUrl := "上报地址"
 	appId := "xxx"
 	ak := "xxx"
 	sk := "bxxxx"
